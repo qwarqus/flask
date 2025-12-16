@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title> {{ title }}ㅤ </title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<header class="container mt-4">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">{{ title }}</a>
+        <li class="nav-item">
+            <a class="nav-link" href="/cart/"> Кошик ㅤ </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/add/"> додати книгу ㅤ </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/info/"> про сайт ㅤ </a>
+        </li>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+
+{% block main %}{% endblock %}
+
+</body>
+</html>
