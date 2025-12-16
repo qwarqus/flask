@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block main %}
+<main class="container mt-4">
+
+  <h1 class="mb-4">Про сайт</h1>
+
+  <div class="card shadow-sm">
+    <div class="card-body">
+
+      <p class="lead">
+        <strong>Flask books</strong> — це навчальний веб-проєкт,
+        створений для демонстрації роботи з Flask, шаблонами Jinja2
+        та базовою логікою веб-додатку.
+      </p>
+
+      <hr>
+
+      <h4>Можливості сайту</h4>
+      <ul>
+        <li>Перегляд каталогу книг</li>
+        <li>Перехід у детальну сторінку книги</li>
+        <li>Додавання книг через форму</li>
+        <li>Кошик для вибраних книг</li>
+        <li>Робота з cookie та session</li>
+      </ul>
+
+      <h4 class="mt-4">Використані технології</h4>
+      <ul>
+        <li>Python</li>
+        <li>Flask</li>
+        <li>Jinja2</li>
+        <li>Bootstrap 4</li>
+      </ul>
+
+      <h4 class="mt-4">Артем, Роман.</h4>
+      <p>
+        Навчальний проєкт створений для практики веб-розробки.
+      </p>
+
+      <a href="/" class="btn btn-primary mt-3">
+        Повернутися на головну
+      </a>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

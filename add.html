@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block main %}
+<main class="container mt-4">
+    <h1 class="mb-4">Додати нову книгу</h1>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-info">{{ message }}</div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <form method="POST" action="/add">
+        <div class="form-group">
+            <label for="title">Назва книги</label>
+            <input type="text" class="form-control" id="title" name="title" required>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Опис книги</label>
+            <textarea class="form-control" id="description" name="description"></textarea>.
+        </div>
+
+        <div class="form-group">
+            <label for="picture">Додайте посилання для обложки книги</label>
+            <input type="url" class="form-control" id="picture" name="picture" required>
+        </div>
+
+        <div class="form-group">
+            <label for="price">Ведіть ціну книги</label>
+            <input type="number" class="form-control" id="price" name="price" required>
+        </div>
+
+        <div class="form-group">
+            <label for="rate">Ведіть рейтинг книги (1-5)</label>
+            <input type="number" class="form-control" id="rate" name="rate" min="1" max="5" required>
+        </div>
+
+        <div class="form-group">
+            <label for="country">Ведіть країну виробника</label>
+            <input type="text" class="form-control" id="country" name="country" required>
+        </div>
+
+        <button type="submit" class="btn btn-success btn-lg">Додати книгу</button>
+        <a href="/" class="btn btn-success btn-lg ml-3">Скасувати</a>
+
+    </form>
+
+</main>
+{% endblock %}

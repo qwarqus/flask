@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block main %}
+<main class="container mt-4">
+    <h1 class="mb-4">Видалити книгу</h1>
+
+    <div class="alert alert-warning" role="alert">
+        Ви дійсно хочете видалити книгу: <strong>{{ book.title }}</strong>?
+    </div>
+
+    <form method="post" action="{{ url_for('delete_book', id=book.id) }}">
+        <button type="submit" class="btn btn-danger">Так, видалити</button>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary">Скасувати</a>
+    </form>
+</main>
+{% endblock %}

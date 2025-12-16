@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block main %}
+<main class="container mt-3">
+
+    {% if cookie %}
+    <b>Hello, {{ cookie }}</b>
+    {% endif %}
+
+    <section class="jumbotron text-center mt-4"
+             style="background-color: white;
+           background-position: center;
+           background-size: cover;">
+        <h1 class="display-4 text-black">Оберіть книгу</h1>
+
+
+    </section>
+
+    <div class="row mt-5">
+        {% for book in books %}
+        <div class="col-md-4">
+            <div class="card mb-4 h-100">
+
+                <img class="card-img-top"
+                     src="{{ book.picture }}"
+                     alt="{{ book.title }}"
+                     style="height: 250px; object-fit: cover;">
+
+                <div class="card-body d-flex flex-column">
+                    <h2 class="h5 card-title">{{ book.title }}</h2>
+                    <p class="card-text">{{ book.description[:120] }}...</p>
+
+                    <div class="mt-auto">
+                        <p><b>{{ book.price }} ₴</b></p>
+                        <a href="/about/{{ book.id }}/" class="btn btn-primary btn-sm">
+                            Деталі
+                        </a>
+                        <a href="/add_to_cart/{{ book.id }}/" class="btn btn-success btn-sm">
+                            В кошик
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</main>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block main %}
+<main class="container mt-4">
+
+  <h1 class="mb-4">{{ title }}</h1>
+
+{% if books %}
+<table class="table">
+  <thead>
+    <tr>
+      <th>Книга</th>
+      <th>Ціна</th>
+      <th>  </th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for book in books %}
+    <tr>
+      <td>{{ book.title }}</td>
+      <td>{{ book.price }} ₴</td>
+      <td><a href="/remove_from_cart/{{ book.id }}/" class="btn btn-danger btn-sm">Видалити</a></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+<h4 class="mt-3">
+  Загальна сума: {{ total }} ₴
+</h4>
+
+<button class="btn btn-success mt-2">
+  Оформити замовлення
+</button>
+
+{% else %}
+<p class="lead">Кошик порожній</p>
+<a href="/" class="btn btn-primary">Перейти до книг</a>
+{% endif %}
+
+</main>
+{% endblock %}
